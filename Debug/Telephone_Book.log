@@ -6,7 +6,7 @@ C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(96,21): warning C4267: =:
 C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(103,28): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
 C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(110,27): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
 C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(144,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(155,33): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
-C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(156,47): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
-C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(157,45): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(154,33): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(155,47): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
+C:\Users\DELL\source\repos\Telephone_Book\TeleBook.cpp(156,45): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
   Telephone_Book.vcxproj -> C:\Users\DELL\source\repos\Telephone_Book\Debug\Telephone_Book.exe

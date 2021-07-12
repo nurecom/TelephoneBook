@@ -20,17 +20,17 @@ public:
 	TeleBook();
 	TeleBook(int _number, const char* _fio, const char* _mobilPhone,
 		const char* _homePhone);
-	// конструктор копирования
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	TeleBook(const TeleBook& obj);
-	// поиск абонента
+	// РїРѕРёСЃРє Р°Р±РѕРЅРµРЅС‚Р°
 	void SearchAbon(TeleBook* p, char const* charsearch, int const countabon);
-	// добавление абонента
+	// РґРѕР±Р°РІР»РµРЅРёРµ Р°Р±РѕРЅРµРЅС‚Р°
 	void AddAbon(TeleBook*& p, int* countabon, int* _number);
-	// удаление абонента
+	// СѓРґР°Р»РµРЅРёРµ Р°Р±РѕРЅРµРЅС‚Р°
 	void DelAbon(TeleBook*& p, int* countabon, int* _number);
-	// деструктор
+	// РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 	~TeleBook();
-	// печать книги абонентов
+	// РїРµС‡Р°С‚СЊ РєРЅРёРіРё Р°Р±РѕРЅРµРЅС‚РѕРІ
 	void ShowPhoneBook();
 	int Getnumber();
 	char GetFIO();

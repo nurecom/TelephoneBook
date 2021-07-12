@@ -1,6 +1,6 @@
 #include "TeleBook.h"
 /**
-* Конструктор без параметров
+* РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 */
 TeleBook::TeleBook()
 {
@@ -10,7 +10,7 @@ TeleBook::TeleBook()
 	homePhone = new char[3]{"No"};
 }
 /**
-* Конструктор с параметрами
+* РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 */
 TeleBook::TeleBook(int _number, const char* _fio, const char* _mobilPhone, const char* _homePhone)
 {
@@ -27,7 +27,7 @@ TeleBook::TeleBook(int _number, const char* _fio, const char* _mobilPhone, const
 	strcpy(homePhone, _homePhone);
 }
 /**
-* Конструктор копирования
+* РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 */
 TeleBook::TeleBook(const TeleBook& obj)
 {
@@ -40,7 +40,7 @@ TeleBook::TeleBook(const TeleBook& obj)
 	strcpy(homePhone, obj.homePhone);
 }
 /**
-* Функция поиска абонента в телефонной книге
+* Р¤СѓРЅРєС†РёСЏ РїРѕРёСЃРєР° Р°Р±РѕРЅРµРЅС‚Р° РІ С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРµ
 */
 void TeleBook::SearchAbon(TeleBook* p, char const* charsearch, int const countabon)
 {
@@ -53,7 +53,7 @@ void TeleBook::SearchAbon(TeleBook* p, char const* charsearch, int const countab
 			countsearch++;
 			if (countsearch == 1)
 			{
-				std::cout << "П/№ " << " | " << " Абонент " << std::endl;
+				std::cout << "Рџ/в„– " << " | " << " РђР±РѕРЅРµРЅС‚ " << std::endl;
 			}
 			std::cout << p[i].number << " . " << p[i].FIO << " . "
 				<< p[i].mobilPhone << " . " << p[i].homePhone << std::endl;
@@ -61,11 +61,11 @@ void TeleBook::SearchAbon(TeleBook* p, char const* charsearch, int const countab
 	}
 	if (countsearch < 1)
 	{
-		std::cout << " Абонент не найден" << std::endl;
+		std::cout << " РђР±РѕРЅРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ" << std::endl;
 	}
 }
 /**
-* Функция добавления абонента в телефонную книгу
+* Р¤СѓРЅРєС†РёСЏ РґРѕР±Р°РІР»РµРЅРёСЏ Р°Р±РѕРЅРµРЅС‚Р° РІ С‚РµР»РµС„РѕРЅРЅСѓСЋ РєРЅРёРіСѓ
 */
 void TeleBook::AddAbon(TeleBook*& p, int* countabon, int* _number)
 {
@@ -91,21 +91,21 @@ void TeleBook::AddAbon(TeleBook*& p, int* countabon, int* _number)
 	
 	char buff[80];
 	std::cin.ignore();
-	std::cout << "\tВведите ФИО: ";
+	std::cout << "\tР’РІРµРґРёС‚Рµ Р¤РРћ: ";
 	std::cin.getline(buff,80);
 	_fio = strlen(buff);
 	temp[*countabon].FIO = new char[_fio + 1];
 	strcpy(temp[* countabon].FIO, buff);
 	std::cout << std::endl;
 
-	std::cout << "\tВведите мобильный номер телефона : ";
+	std::cout << "\tР’РІРµРґРёС‚Рµ РјРѕР±РёР»СЊРЅС‹Р№ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР° : ";
 	std::cin.getline(buff, 80);
 	_mobilPhone = strlen(buff);
 	temp[*countabon].mobilPhone = new char[_mobilPhone + 1];
 	strcpy(temp[*countabon].mobilPhone, buff);
 	std::cout << std::endl;
 
-	std::cout << "\tВведите домашний номер телефона : ";
+	std::cout << "\tР’РІРµРґРёС‚Рµ РґРѕРјР°С€РЅРёР№ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР° : ";
 	std::cin.getline(buff, 80);
 	_homePhone = strlen(buff);
 	temp[*countabon].homePhone = new char[_homePhone + 1];
@@ -115,21 +115,21 @@ void TeleBook::AddAbon(TeleBook*& p, int* countabon, int* _number)
 	(*_number)++;
 	delete[] p;
 	p = temp;
-	std::cout << "\tИзмененения внесены...\n";
+	std::cout << "\tРР·РјРµРЅРµРЅРµРЅРёСЏ РІРЅРµСЃРµРЅС‹...\n";
 }
 /**
-* Функция удаления абонента из телефонной книги
+* Р¤СѓРЅРєС†РёСЏ СѓРґР°Р»РµРЅРёСЏ Р°Р±РѕРЅРµРЅС‚Р° РёР· С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё
 */
 void TeleBook::DelAbon(TeleBook*& p, int* countabon, int* _number)
 {
 	char _fio, _mobilPhone, _homePhone;
 	int numbertmp = *_number;
 	int p_count = 0;
-	// Порядковый номер для удаления
+	// РџРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ РґР»СЏ СѓРґР°Р»РµРЅРёСЏ
 	int delnumber;
-	// Счетчик был ли удален абонент
+	// РЎС‡РµС‚С‡РёРє Р±С‹Р» Р»Рё СѓРґР°Р»РµРЅ Р°Р±РѕРЅРµРЅС‚
 	int countdel = 0;
-	std::cout << "\tВведите порядковый номер абонента для удаления: ";
+	std::cout << "\tР’РІРµРґРёС‚Рµ РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ Р°Р±РѕРЅРµРЅС‚Р° РґР»СЏ СѓРґР°Р»РµРЅРёСЏ: ";
 	std::cin >> delnumber;
 	std::cin.ignore();
 	for (int i = 0; i < *countabon; i++)
@@ -165,17 +165,17 @@ void TeleBook::DelAbon(TeleBook*& p, int* countabon, int* _number)
 	}
 	if (countdel)
 	{
-		std::cout << "\tИзменения внесены... \n";
+		std::cout << "\tРР·РјРµРЅРµРЅРёСЏ РІРЅРµСЃРµРЅС‹... \n";
 	}
 	delete[]p;
 	p = temp;
 	if (!countdel)
 	{
-		std::cout << "\tАбонент не найден \n";
+		std::cout << "\tРђР±РѕРЅРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ \n";
 	}
 }
 /**
-* Деструктор класса 
+* Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° 
 */
 TeleBook::~TeleBook()
 {
@@ -184,16 +184,16 @@ TeleBook::~TeleBook()
 	delete[]homePhone;
 }
 /**
-* Вывод на экран абонентов телефонной книги
+* Р’С‹РІРѕРґ РЅР° СЌРєСЂР°РЅ Р°Р±РѕРЅРµРЅС‚РѕРІ С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё
 */
 void TeleBook::ShowPhoneBook()
 {
 	std::cout << number << " . ";
-	std::cout << " ФИО : " << FIO << " Моб. телефон : " << mobilPhone << " Дом. телефон : " << homePhone;
+	std::cout << " Р¤РРћ : " << FIO << " РњРѕР±. С‚РµР»РµС„РѕРЅ : " << mobilPhone << " Р”РѕРј. С‚РµР»РµС„РѕРЅ : " << homePhone;
 	std::cout << std::endl;
 }
 /**
-* Геттеры типов классса
+* Р“РµС‚С‚РµСЂС‹ С‚РёРїРѕРІ РєР»Р°СЃСЃСЃР°
 */
 int TeleBook::Getnumber()
 {
